@@ -1,21 +1,24 @@
-# Componentes del proyecto a largo plazo
-
+## componentes del proyecto a largo plazo
 - front-end
   - sitio web principal
-    - construida con Astro
+    - construida con `Astro`
   - aplicación web de catálogo/pedidos
-    - construida con Angular 14+
+    - construida con `Angular 14+`
+  - librería de estilos
+    - estilos con `Sass`
+    - almacenar en un CDN
+    - probar los componentes con `Storybook`
 - back-end
   - microservicios
-    - construidos usando Golang 1.18+
+    - construidos usando `Golang 1.18+`
 - infra
   - infraestructura de nube
-    - usar Firebase y GCP  
+    - usar `Firebase` y `GCP`  
   - infraestructura como código
-    - administrar la infraestructura del proyecto usando Pulumi
+    - manejar la infra del proyecto usando `Pulumi`
 - integración y despliegue
   - repositorios
-    - alojar el código en Github
-    - gitglow basado en master y tags
+    - alojar el código en `Github`
+    - gitflow basado en master y tags
   - despliegue
     - pendiente de definir (?)
