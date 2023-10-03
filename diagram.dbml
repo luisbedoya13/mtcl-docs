@@ -1,0 +1,19 @@
+Project project_name {
+  database_type: 'Firestore'
+  Note: 'App de finanzas'
+}
+
+Table users {
+  id ULID [primary key]
+  email text
+  password text
+}
+
+Table accounts {
+  id ULID [primary key]
+}
+
+Table pockets {
+  id ULID [primary key]
+  account_id ULID [ref: < accounts.id]
+}
