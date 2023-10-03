@@ -1,19 +1,59 @@
-Project project_name {
+Project montecarlo {
   database_type: 'Firestore'
   Note: 'App de finanzas'
+  Note: 'Versión 1.1'
 }
 
 Table users {
   id ULID [primary key]
   email text
-  password text
 }
 
 Table accounts {
   id ULID [primary key]
+  user_id ULID [ref: < users.id]
+  type account_types
+  name text
+  description text
+
+}
+
+enum account_types {
+  bank
+  wallet
+  cash
 }
 
 Table pockets {
   id ULID [primary key]
   account_id ULID [ref: < accounts.id]
+  nickname text
+  balance number
+}
+
+Table transactions {
+  id ULID [primary key]
+  pocket_id ULID [ref: < pockets.id]
+  category ULID [ref: < transaction_categories.id]
+  type transaction_types
+  date date
+  amount number
+}
+
+enum transaction_types {
+  income
+  expense
+  transfer
+}
+
+Table transaction_categories {
+  id ULID
+  name text
+  type transaction_category_types
+  icon text
+}
+
+enum transaction_category_types {
+  income
+  expense
 }
